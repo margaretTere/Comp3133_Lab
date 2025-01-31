@@ -1,0 +1,19 @@
+# docker-compose up --build
+# docker-compose -p fs-lab3 -f docker-compose.yml up -d --build
+
+version: '3.9'
+
+services:
+  fs-lab3:
+    image: mongo:latest
+    container_name: fs-lab3
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo/db-data:/data/db
+
+volumes:
+  mongo-db:
+    driver: local
+  mongo_data:
