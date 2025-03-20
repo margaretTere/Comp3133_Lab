@@ -1,0 +1,21 @@
+<h2>Heroes List</h2>
+<ul>
+  <li *ngFor="let hero of heroes" (click)="selectedHero = hero">
+    {{ hero.name | removeSpaces }}
+  </li>
+</ul>
+<ul>
+    <li *ngFor="let hero of heroes" (click)="selectedHero = hero">
+      <span class="badge">{{ hero.id }}</span>
+      {{ hero.name | removeSpaces }}  
+    </li>
+  </ul>
+  
+  <h4>Enter Hero Name:</h4>
+  <input type="text" inputFormat class="custom-input" placeholder="Type here">
+  
+  
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<ul>
+ 
